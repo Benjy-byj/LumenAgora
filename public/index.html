@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lumen Agora</title>
+    <meta
+      name="description"
+      content="Lumen Agora is an open research commons for paper discovery, scholarly discussion, identity, and opportunity connection."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Lumen Agora home">
+          <span class="brand-mark">LA</span>
+          <span>
+            <strong>Lumen Agora</strong>
+            <small>开放学术公共广场</small>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-button active" data-view="discover">发现</button>
+          <button class="nav-button" data-view="opportunities">机会</button>
+          <button class="nav-button" data-view="network">主页</button>
+          <button class="nav-button" data-view="messages">私信</button>
+          <button class="nav-button" data-view="identity">身份</button>
+        </nav>
+
+        <div class="identity-switcher">
+          <label for="personaSelect">发言身份</label>
+          <select id="personaSelect" aria-label="Posting persona">
+            <option value="verified">Bai · Verified Researcher</option>
+            <option value="handle">@lumen_builder</option>
+          </select>
+        </div>
+      </header>
+
+      <main>
+        <section id="discover" class="view active" aria-labelledby="discoverTitle">
+          <div class="page-heading">
+            <div>
+              <p class="section-kicker">Research Discovery</p>
+              <h1 id="discoverTitle">刷研究卡片，点开看完整导读</h1>
+            </div>
+            <button class="primary-action" id="newCardButton">发布研究卡片</button>
+          </div>
+
+          <div class="toolbar" aria-label="Discovery controls">
+            <label class="search-box">
+              <span>搜索</span>
+              <input id="searchInput" type="search" placeholder="搜标题、作者、领域、课题组" />
+            </label>
+            <div class="filter-group" id="filterGroup" aria-label="Research filters"></div>
+          </div>
+
+          <div id="feedGrid" class="card-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="opportunities" class="view" aria-labelledby="opportunityTitle">
+          <div class="page-heading">
+            <div>
+              <p class="section-kicker">Academic Opportunities</p>
+              <h1 id="opportunityTitle">RA、PhD、Postdoc 与合作机会</h1>
+            </div>
+            <button class="secondary-action">发布机会</button>
+          </div>
+          <div id="opportunityList" class="opportunity-list"></div>
+        </section>
+
+        <section id="network" class="view" aria-labelledby="networkTitle">
+          <div class="page-heading">
+            <div>
+              <p class="section-kicker">Research Network</p>
+              <h1 id="networkTitle">研究者、学生与课题组主页</h1>
+            </div>
+            <button class="secondary-action">完善主页</button>
+          </div>
+          <div id="profileGrid" class="profile-grid"></div>
+        </section>
+
+        <section id="messages" class="view" aria-labelledby="messageTitle">
+          <div class="page-heading">
+            <div>
+              <p class="section-kicker">Collaboration Inbox</p>
+              <h1 id="messageTitle">围绕兴趣发起私聊</h1>
+            </div>
+          </div>
+          <div class="messages-layout">
+            <div id="conversationList" class="conversation-list"></div>
+            <div id="conversationDetail" class="conversation-detail"></div>
+          </div>
+        </section>
+
+        <section id="identity" class="view" aria-labelledby="identityTitle">
+          <div class="page-heading">
+            <div>
+              <p class="section-kicker">Trust And Identity</p>
+              <h1 id="identityTitle">一个账户，多种公开表达身份</h1>
+            </div>
+          </div>
+          <div id="identityPanel" class="identity-panel"></div>
+        </section>
+      </main>
+    </div>
+
+    <aside id="detailPanel" class="detail-panel" aria-hidden="true" aria-label="Research detail"></aside>
+    <div id="panelBackdrop" class="panel-backdrop" hidden></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

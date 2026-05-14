@@ -1,0 +1,11 @@
+{
+  "name": "lumen-agora",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "description": "An open-source, nonprofit research commons for discovery, discussion, identity, and opportunity connection.",
+  "scripts": {
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check public/app.js"
+  }
+}
